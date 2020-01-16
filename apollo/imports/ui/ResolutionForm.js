@@ -6,7 +6,8 @@ export default class ResolutionForm extends Component {
   render() {
     return (
       <>
-        <input type="text" />
+        <input type="text" ref={input => (this.name = input)} />
+        <button>Submit</button>
       </>
     );
   }
