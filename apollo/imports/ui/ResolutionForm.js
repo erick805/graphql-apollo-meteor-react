@@ -3,11 +3,15 @@ import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 
 export default class ResolutionForm extends Component {
+  submitForm = () => {
+    console.log(this.name.value);
+  };
+
   render() {
     return (
       <>
         <input type="text" ref={input => (this.name = input)} />
-        <button>Submit</button>
+        <button onClick={this.submitForm}>Submit</button>
       </>
     );
   }
