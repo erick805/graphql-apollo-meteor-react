@@ -1,16 +1,13 @@
+import Resolutions from "./resolutions";
+
+// Resolutions.insert({
+//   name: "Test Resolution"
+// });
+
 export default {
   Query: {
     resolutions() {
-      return [
-        {
-          _id: "fake id",
-          name: "new resolution"
-        },
-        {
-          _id: "fake id 2",
-          name: "get stuff done!"
-        }
-      ];
+      return Resolutions.find({}).fetch();
     }
   }
 };
