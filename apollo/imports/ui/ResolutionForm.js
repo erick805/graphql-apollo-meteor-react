@@ -2,7 +2,14 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 
-export default class ResolutionForm extends Component {
+const createResolution = gql`
+  mutation createResolution {
+    createResolution {
+      _id
+    }
+  }
+`;
+class ResolutionForm extends Component {
   submitForm = () => {
     console.log(this.name.value);
   };
@@ -16,3 +23,7 @@ export default class ResolutionForm extends Component {
     );
   }
 }
+
+export default graphql(createResolution, {
+  name: "createResolution"
+})(ResolutionForm);
