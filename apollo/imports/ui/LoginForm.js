@@ -4,9 +4,12 @@ import { Accounts } from "meteor/accounts-base";
 export default class LoginForm extends Component {
   login = e => {
     e.preventDefault();
-    Meteor.loginWithPassword(this.email.value, this.password.value, err =>
-      console.error("User Login Error: ", err)
-    );
+    Meteor.loginWithPassword(this.email.value, this.password.value, err => {
+      console.error("User Login Error: ", err);
+      if (!err) {
+        this.props.client.resetStore();
+      }
+    });
   };
   render() {
     return (
