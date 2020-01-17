@@ -9,7 +9,7 @@ export default class RegisterForm extends Component {
         email: this.email.value,
         password: this.password.value
       },
-      err => console.error("User Information Error: ", err)
+      err => console.error("User Registration Error: ", err)
     );
   };
   render() {
