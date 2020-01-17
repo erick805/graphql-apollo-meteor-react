@@ -1,7 +1,10 @@
 import React from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
+import { Accounts } from "meteor/accounts-base";
 import ResolutionForm from "./ResolutionForm";
+
+console.log(Accounts);
 
 const App = ({ loading, resolutions }) => {
   if (loading) return null;
