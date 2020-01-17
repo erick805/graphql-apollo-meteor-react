@@ -4,7 +4,7 @@ import merge from "lodash/merge";
 
 import ResolutionsSchema from "../../api/resolutions/Resolutions.graphql";
 import ResolutionsResolvers from "../../api/resolutions/resolvers";
-
+import UsersSchema from "../../api/users/User.graphql";
 const testSchema = `
 type Query {
   hi: String
@@ -26,7 +26,8 @@ const resolvers = merge(testResolvers, ResolutionsResolvers);
 
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers
+  resolvers,
+  UsersSchema
 });
 
 createApolloServer({ schema });
