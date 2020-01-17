@@ -18,9 +18,8 @@ const App = ({ data }) => {
   );
 };
 
-const hiQuery = gql`
+const resolutionsQuery = gql`
   query Resolutions {
-    hi
     resolutions {
       _id
       name
@@ -28,4 +27,4 @@ const hiQuery = gql`
   }
 `;
 
-export default graphql(hiQuery)(App);
+export default graphql(resolutionsQuery)(App);
