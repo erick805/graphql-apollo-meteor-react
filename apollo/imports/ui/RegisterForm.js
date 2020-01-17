@@ -2,6 +2,16 @@ import React, { Component } from "react";
 import { Accounts } from "meteor/accounts-base";
 
 export default class RegisterForm extends Component {
+  registerUser = e => {
+    e.preventDefault();
+    Accounts.createUser(
+      {
+        email: this.email.value,
+        password: this.password.value
+      },
+      err => console.error("User Information Error: ", err)
+    );
+  };
   render() {
     return (
       <form onSubmit={this.registerUser}>
