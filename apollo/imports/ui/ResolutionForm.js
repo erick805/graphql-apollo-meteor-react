@@ -11,11 +11,17 @@ const createResolution = gql`
 `;
 class ResolutionForm extends Component {
   submitForm = () => {
-    this.props.createResolution({
+    const { createResolution, refetch } = this.props;
+
+    createResolution({
       variables: {
         name: this.name.value
       }
-    });
+    })
+      .then(({ data }) => {
+        refetch();
+      })
+      .catch(err => console.error("Resolution Form Submit Error: ", err));
   };
 
   render() {
