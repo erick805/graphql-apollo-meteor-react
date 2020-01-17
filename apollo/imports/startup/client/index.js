@@ -2,7 +2,7 @@ import React from "react";
 import { Meteor } from "meteor/meteor";
 import { render } from "react-dom";
 import { ApolloProvider } from "react-apollo";
-import { ApolloLink } from "apollo-link";
+import { ApolloLink, from } from "apollo-link";
 import { ApolloClient } from "apollo-client";
 import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -25,7 +25,7 @@ const authLink = new ApolloLink((operation, forward) => {
 const cache = new InMemoryCache();
 
 const client = new ApolloClient({
-  link: httpLink,
+  link: from([authLink, httpLink]),
   cache,
   connectToDevTools: true
 });
