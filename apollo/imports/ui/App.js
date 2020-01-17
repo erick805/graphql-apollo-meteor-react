@@ -8,7 +8,7 @@ const App = ({ data }) => {
   return (
     <>
       <h1>{data.hi}</h1>
-      <ResolutionForm refetch={data.refetch} />
+      <ResolutionForm />
       <ul>
         {data.resolutions.map(resolution => (
           <li key={resolution._id}>{resolution.name}</li>
@@ -19,7 +19,7 @@ const App = ({ data }) => {
 };
 
 const hiQuery = gql`
-  {
+  query Resolutions {
     hi
     resolutions {
       _id
