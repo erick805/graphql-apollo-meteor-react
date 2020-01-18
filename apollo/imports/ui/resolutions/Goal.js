@@ -22,7 +22,13 @@ class Goal extends Component {
           onChange={this.toggleGoal}
           checked={goal.completed}
         />
-        {goal.name}
+        <span
+          style={{
+            textDecoration: goal.completed ? "line-through" : "none"
+          }}
+        >
+          {goal.name}
+        </span>
       </li>
     );
   }
