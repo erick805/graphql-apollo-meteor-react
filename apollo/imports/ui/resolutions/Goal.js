@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import gql from "graphql-tag";
+import { graphql } from "react-apollo";
 
-export default class Goal extends Component {
+class Goal extends Component {
   render() {
     return (
       <li>
@@ -10,3 +12,18 @@ export default class Goal extends Component {
     );
   }
 }
+
+const toggleGoal = gql`
+  mutation toggleGoal($id: String!) {
+    toggleGoal(_id: $id) {
+      _id
+    }
+  }
+`;
+
+export default graphql(toggleGoal, {
+  name: "toggleGoal",
+  options: {
+    refetchQueries: ["Resolutions"]
+  }
+})(Goal);
