@@ -1,4 +1,4 @@
 type User {
-  _id: String!
+  _id: String
   email: String
 }
