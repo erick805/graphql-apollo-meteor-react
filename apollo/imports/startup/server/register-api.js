@@ -15,9 +15,9 @@ const resolvers = merge(GoalsResolvers, ResolutionsResolvers, UsersResolvers);
 
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers,
-  UsersSchema
+  resolvers
 });
 
 createApolloServer({ schema });
+
 //
