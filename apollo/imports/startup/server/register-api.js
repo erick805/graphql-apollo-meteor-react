@@ -4,12 +4,14 @@ import merge from "lodash/merge";
 
 import ResolutionsSchema from "../../api/resolutions/Resolutions.graphql";
 import ResolutionsResolvers from "../../api/resolutions/resolvers";
+import GoalsSchema from "../../api/goals/Goal.graphql";
+import GoalsResolvers from "../../api/goals/resolvers";
 import UsersSchema from "../../api/users/User.graphql";
 import UsersResolvers from "../../api/users/resolvers";
 
-const typeDefs = [ResolutionsSchema, UsersSchema];
+const typeDefs = [GoalsSchema, ResolutionsSchema, UsersSchema];
 
-const resolvers = merge(ResolutionsResolvers, UsersResolvers);
+const resolvers = merge(GoalsResolvers, ResolutionsResolvers, UsersResolvers);
 
 const schema = makeExecutableSchema({
   typeDefs,
@@ -18,5 +20,3 @@ const schema = makeExecutableSchema({
 });
 
 createApolloServer({ schema });
-
-//
