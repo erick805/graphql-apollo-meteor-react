@@ -12,7 +12,7 @@ import Goal from "./resolutions/Goal";
 const App = ({ loading, resolutions, client, user }) => {
   if (loading) return null;
   return (
-    <>
+    <div>
       {user._id ? (
         <button
           onClick={() => {
@@ -23,16 +23,22 @@ const App = ({ loading, resolutions, client, user }) => {
           Logout
         </button>
       ) : (
-        <>
+        <div>
           <RegisterForm client={client} />
           <LoginForm client={client} />
-        </>
+        </div>
       )}
       <ResolutionForm />
       <ul>
         {resolutions.map(resolution => (
           <li key={resolution._id}>
-            {resolution.name}
+            <span
+              style={{
+                textDecoration: resolution.completed ? "line-through" : "none"
+              }}
+            >
+              {resolution.name}
+            </span>
             <ul>
               {resolution.goals.map(goal => (
                 <Goal goal={goal} key={goal._id} />
@@ -42,7 +48,7 @@ const App = ({ loading, resolutions, client, user }) => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 
@@ -51,6 +57,7 @@ const resolutionsQuery = gql`
     resolutions {
       _id
       name
+      completed
       goals {
         _id
         name
