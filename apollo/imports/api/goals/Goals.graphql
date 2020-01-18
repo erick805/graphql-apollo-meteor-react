@@ -1,0 +1,5 @@
+type Goal {
+  _id: String
+  name: String
+  completed: Boolean
+}
