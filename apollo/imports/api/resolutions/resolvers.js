@@ -16,7 +16,7 @@ export default {
         resolutionId: resolution._id
       }).fetch(),
     completed: resolution => {
-      const goals = Goal.find({
+      const goals = Goals.find({
         resolutionId: resolution._id,
         completed: false
       }).fetch();
