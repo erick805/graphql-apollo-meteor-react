@@ -19,3 +19,5 @@ const schema = makeExecutableSchema({
 });
 
 createApolloServer({ schema });
+
+// console.log(schema)
