@@ -14,8 +14,16 @@ export default class LoginForm extends Component {
   render() {
     return (
       <form onSubmit={this.login}>
-        <input type="email" ref={input => (this.email = input)} />
-        <input type="password" ref={input => (this.password = input)} />
+        <input
+          type="email"
+          placeholder="email"
+          ref={input => (this.email = input)}
+        />
+        <input
+          type="password"
+          placeholder="password"
+          ref={input => (this.password = input)}
+        />
         <button type="submit">Login User</button>
       </form>
     );

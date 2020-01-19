@@ -20,4 +20,4 @@ const schema = makeExecutableSchema({
 
 createApolloServer({ schema });
 
-// console.log(schemadfd)
+// console.log(schema)
