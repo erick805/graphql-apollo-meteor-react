@@ -9,7 +9,7 @@ $ git clone https://github.com/rickylaufitness/graphql-apollo-meteor-react.git
 2. Change into apollo directory:
 
 ```
-$ cd apollo
+$ cd graphql-apollo-meteor-react/apollo
 ```
 
 3. Run meteor to build environment
