@@ -32,7 +32,7 @@ export default class UserForm extends Component {
           <RegisterForm client={client} />
         )}
         <button onClick={() => this.setState({ login: !login })}>
-          {login ? "Register Form" : "Login"}
+          {login ? "Register Form" : "Login Form"}
         </button>
       </div>
     );
