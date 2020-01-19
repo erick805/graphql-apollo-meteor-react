@@ -12,7 +12,13 @@ $ git clone https://github.com/rickylaufitness/graphql-apollo-meteor-react.git
 $ cd graphql-apollo-meteor-react/apollo
 ```
 
-3. Run meteor to build environment
+3. Install dependencies
+
+```
+$ npm install
+```
+
+4. Run meteor to build environment
 
 ```
 $ meteor
